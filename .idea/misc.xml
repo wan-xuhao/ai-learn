@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/SAA-01HelloWorld/pom.xml" />
         <option value="$PROJECT_DIR$/SAA-02Ollama/pom.xml" />
         <option value="$PROJECT_DIR$/SAA-03ChatModelChatClient/pom.xml" />
+        <option value="$PROJECT_DIR$/SAA-04StreamingOutput/pom.xml" />
       </list>
     </option>
   </component>
