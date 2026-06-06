@@ -146,11 +146,8 @@ public class PromptController {
     // http://localhost:8005/prompt/chat6?question=火锅介绍下
     @GetMapping("/prompt/chat6")
     public Flux<String> chat6(String question) {
-        return qwen3Mix6bClient.prompt()
-                // AI 能力边界
-                .system("你是一个美食助手，只回答美食问题，其它问题回复，我只能回答美食相关问题，其它无可奉告")
-                .user(question)
-                .stream()
-                .content();
+        SystemMessage systemMessage = new SystemMessage("你是一个史学家，每段历史控制在600字以内且以HTML格式返回");
+        UserMessage userMessage = new UserMessage(question);
+        return qwen3Mix6bClient.prompt(new Prompt(userMessage, systemMessage)).stream().content();
     }
 }

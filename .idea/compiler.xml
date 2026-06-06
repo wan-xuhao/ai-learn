@@ -10,6 +10,7 @@
         <module name="SAA-02Ollama" />
         <module name="SAA-05Prompt" />
         <module name="SAA-01HelloWorld" />
+        <module name="SAA-06PromptTemplate" />
         <module name="SAA-03ChatModelChatClient" />
         <module name="SAA-04StreamingOutput" />
       </profile>
@@ -22,6 +23,7 @@
       <module name="SAA-03ChatModelChatClient" options="-parameters" />
       <module name="SAA-04StreamingOutput" options="-parameters" />
       <module name="SAA-05Prompt" options="-parameters" />
+      <module name="SAA-06PromptTemplate" options="-parameters" />
       <module name="SpringAIAlibaba-atguiguV1" options="" />
     </option>
   </component>
