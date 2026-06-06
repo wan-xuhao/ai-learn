@@ -2,10 +2,7 @@ package com.atguigu.study.controller;
 
 import jakarta.annotation.Resource;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.messages.AssistantMessage;
-import org.springframework.ai.chat.messages.SystemMessage;
-import org.springframework.ai.chat.messages.ToolResponseMessage;
-import org.springframework.ai.chat.messages.UserMessage;
+import org.springframework.ai.chat.messages.*;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.prompt.Prompt;
@@ -64,7 +61,10 @@ public class PromptController {
         UserMessage userMessage = new UserMessage(question);
 
         Prompt prompt = new Prompt(userMessage, systemMessage);
-
+        deepseekChatModel.call(prompt).getResults().forEach(item->{
+            String text1 = item.getOutput().getText();
+            System.out.println(text1);
+        });
         return deepseekChatModel.stream(prompt);
 
     }
@@ -143,11 +143,26 @@ public class PromptController {
 
 
 
-    // http://localhost:8005/prompt/chat6?question=火锅介绍下
+    // http://localhost:8005/prompt/chat6?question=广州
     @GetMapping("/prompt/chat6")
     public Flux<String> chat6(String question) {
-        SystemMessage systemMessage = new SystemMessage("你是一个史学家，每段历史控制在600字以内且以HTML格式返回");
-        UserMessage userMessage = new UserMessage(question);
-        return qwen3Mix6bClient.prompt(new Prompt(userMessage, systemMessage)).stream().content();
+        // 大模型思考回复的内容
+        String text = qwen3Mix6bClient.prompt().system("你是一个天气预报专家，其他内容你无法回复")
+                .user(question).call().chatResponse().getResult().getOutput().getText();
+        // 桥接外部库，模拟调用第三方工具得出的结果，相当于deepseek的联网搜索
+        ToolResponseMessage.ToolResponse toolResponse = new ToolResponseMessage.ToolResponse("1", "获得"+question+"今天的天气", "晴天");
+        ToolResponseMessage toolResponseMessage = new ToolResponseMessage(List.of(toolResponse));
+        String text1 = toolResponseMessage.getResponses().getFirst().responseData();
+        System.out.println(text1);
+        return qwen3Mix6bClient.prompt().system("你是一个天气预报专家，其他内容你无法回复")
+                .user(question).stream().content();
+
+        /*Flux<String> stringFlux = qwen3Mix6bClient.prompt().system("你是一个史学家，每段历史控制在600字以内且以HTML格式返回")
+                .user(question)
+                .stream().chatResponse().mapNotNull(response -> response.getResults().getFirst().getOutput().getText());
+        return stringFlux;*/
+//        SystemMessage systemMessage = new SystemMessage("你是一个史学家，每段历史控制在600字以内且以HTML格式返回");
+//        UserMessage userMessage = new UserMessage(question);
+//        return qwen3Mix6bClient.prompt(new Prompt(userMessage, systemMessage)).stream().content();
     }
 }
