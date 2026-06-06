@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SAA-02Ollama" />
         <module name="SAA-01HelloWorld" />
+        <module name="SAA-03ChatModelChatClient" />
       </profile>
     </annotationProcessing>
   </component>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SAA-01HelloWorld" options="-parameters" />
       <module name="SAA-02Ollama" options="-parameters" />
+      <module name="SAA-03ChatModelChatClient" options="-parameters" />
       <module name="SpringAIAlibaba-atguiguV1" options="" />
     </option>
   </component>
