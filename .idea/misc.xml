@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/SAA-06PromptTemplate/pom.xml" />
         <option value="$PROJECT_DIR$/SAA-07StructuredOutput/pom.xml" />
         <option value="$PROJECT_DIR$/SAA-08Persistent/pom.xml" />
+        <option value="$PROJECT_DIR$/SAA-09Text2image/pom.xml" />
       </list>
     </option>
   </component>

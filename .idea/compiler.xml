@@ -8,6 +8,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="SAA-09Text2image" />
         <module name="SAA-01HelloWorld" />
         <module name="SAA-06PromptTemplate" />
         <module name="SAA-08Persistent" />
@@ -29,6 +30,7 @@
       <module name="SAA-06PromptTemplate" options="-parameters" />
       <module name="SAA-07StructuredOutput" options="-parameters" />
       <module name="SAA-08Persistent" options="-parameters" />
+      <module name="SAA-09Text2image" options="-parameters" />
       <module name="SpringAIAlibaba-atguiguV1" options="" />
     </option>
   </component>
