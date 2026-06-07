@@ -17,6 +17,7 @@
         <module name="SAA-05Prompt" />
         <module name="SAA-04StreamingOutput" />
         <module name="SAA-07StructuredOutput" />
+        <module name="SAA-10Text2voice" />
       </profile>
     </annotationProcessing>
   </component>
@@ -31,6 +32,7 @@
       <module name="SAA-07StructuredOutput" options="-parameters" />
       <module name="SAA-08Persistent" options="-parameters" />
       <module name="SAA-09Text2image" options="-parameters" />
+      <module name="SAA-10Text2voice" options="-parameters" />
       <module name="SpringAIAlibaba-atguiguV1" options="" />
     </option>
   </component>
