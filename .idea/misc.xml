@@ -15,6 +15,7 @@
         <option value="$PROJECT_DIR$/SAA-08Persistent/pom.xml" />
         <option value="$PROJECT_DIR$/SAA-09Text2image/pom.xml" />
         <option value="$PROJECT_DIR$/SAA-10Text2voice/pom.xml" />
+        <option value="$PROJECT_DIR$/SAA-11Embed2vector/pom.xml" />
       </list>
     </option>
   </component>

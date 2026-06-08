@@ -9,6 +9,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SAA-09Text2image" />
+        <module name="SAA-11Embed2vector" />
         <module name="SAA-01HelloWorld" />
         <module name="SAA-06PromptTemplate" />
         <module name="SAA-08Persistent" />
@@ -33,6 +34,7 @@
       <module name="SAA-08Persistent" options="-parameters" />
       <module name="SAA-09Text2image" options="-parameters" />
       <module name="SAA-10Text2voice" options="-parameters" />
+      <module name="SAA-11Embed2vector" options="-parameters" />
       <module name="SpringAIAlibaba-atguiguV1" options="" />
     </option>
   </component>
